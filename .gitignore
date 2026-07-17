@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+# npm package
+*.tgz
+
+# Testing
+coverage/
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettier-cache
+
+# Bun
+bun.lockb
+
+# Turborepo
+.turbo/
+
+# Next.js (if you use this repo for testing later)
+.next/
+
+# Vite
+vite.config.ts.timestamp-*
+
+# Generated README (remove this line if you want to version-control it)
+# README.md
