@@ -18,6 +18,7 @@ export async function getProjectInfo(): Promise<ProjectInfo> {
         name: packageJson.name ?? "",
         version: packageJson.version ?? "",
         description: packageJson.description ?? "",
+        license: packageJson.license,
         scripts: packageJson.scripts ?? {},
         dependencies: packageJson.dependencies ?? {},
         devDependencies: packageJson.devDependencies ?? {}

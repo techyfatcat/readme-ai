@@ -5,6 +5,7 @@ import { BuildToolInfo } from "./buildTool.js";
 import { DeploymentInfo } from "./deployment.js";
 import { EnvironmentInfo } from "./environment.js";
 import { GitInfo } from "./git.js";
+import { LicenseInfo } from "./license.js";
 
 export interface ProjectAnalysis {
 
@@ -23,6 +24,8 @@ export interface ProjectAnalysis {
     environment: EnvironmentInfo;
 
     git: GitInfo;
+
+    license: LicenseInfo;
 
 
 }

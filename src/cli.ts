@@ -68,6 +68,14 @@ program.action(async () => {
         }
 
         console.log("");
+        console.log(chalk.cyan.bold("License"));
+
+        console.log(
+            `  ${result.license.name ?? "Not Found"}`
+        );
+
+
+        console.log("");
 
         for (const [category, technologies] of Object.entries(result.technologies.categories)) {
 
