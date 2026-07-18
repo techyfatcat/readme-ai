@@ -54,6 +54,20 @@ program.action(async () => {
         }
 
         console.log("");
+        console.log(chalk.cyan.bold("Git"));
+
+        if (!result.git.initialized) {
+
+            console.log("  Repository : Not Initialized");
+
+        } else {
+
+            console.log(`  Owner       : ${result.git.owner ?? "Unknown"}`);
+            console.log(`  Repository  : ${result.git.repository ?? "Unknown"}`);
+            console.log(`  Branch      : ${result.git.defaultBranch}`);
+        }
+
+        console.log("");
 
         for (const [category, technologies] of Object.entries(result.technologies.categories)) {
 

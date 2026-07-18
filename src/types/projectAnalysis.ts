@@ -4,6 +4,7 @@ import { RuntimeInfo } from "./runtime.js";
 import { BuildToolInfo } from "./buildTool.js";
 import { DeploymentInfo } from "./deployment.js";
 import { EnvironmentInfo } from "./environment.js";
+import { GitInfo } from "./git.js";
 
 export interface ProjectAnalysis {
 
@@ -20,6 +21,8 @@ export interface ProjectAnalysis {
     deployment: DeploymentInfo;
 
     environment: EnvironmentInfo;
+
+    git: GitInfo;
 
 
 }

@@ -7,6 +7,7 @@ import { getProjectFolders } from "../services/folderService.js";
 import { detectBuildTool } from "../services/buildToolService.js";
 import { detectDeployment } from "../detector/deploymentDetector.js";
 import { detectEnvironment } from "../detector/environmentDetector.js";
+import { detectGit } from "../detector/gitDetector.js";
 
 export async function analyzeProject(): Promise<ProjectAnalysis> {
 
@@ -24,6 +25,8 @@ export async function analyzeProject(): Promise<ProjectAnalysis> {
 
     const environment = await detectEnvironment();
 
+    const git = detectGit();
+
     technologies.packageManager = await detectPackageManager();
 
     return {
@@ -33,7 +36,8 @@ export async function analyzeProject(): Promise<ProjectAnalysis> {
         runtime,
         buildTool, 
         deployment,
-        environment
+        environment,
+        git
     };
 
 }
