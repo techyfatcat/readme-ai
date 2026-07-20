@@ -6,6 +6,7 @@ import { DeploymentInfo } from "./deployment.js";
 import { EnvironmentInfo } from "./environment.js";
 import { GitInfo } from "./git.js";
 import { LicenseInfo } from "./license.js";
+import { StructureInfo } from "./structure.js";
 
 export interface ProjectAnalysis {
 
@@ -26,6 +27,8 @@ export interface ProjectAnalysis {
     git: GitInfo;
 
     license: LicenseInfo;
+
+    structure: StructureInfo;
 
 
 }

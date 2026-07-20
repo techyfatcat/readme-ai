@@ -74,6 +74,22 @@ program.action(async () => {
             `  ${result.license.name ?? "Not Found"}`
         );
 
+        console.log("");
+        console.log(chalk.cyan.bold("Project Structure"));
+
+        for (const category of Object.keys(result.structure) as (keyof typeof result.structure)[]) {
+
+        const folders = result.structure[category];
+
+        if (folders.length === 0) continue;
+
+        console.log(`\n${category}`);
+
+        folders.forEach(folder => {
+            console.log(`  ✓ ${folder}`);
+        });
+    }
+
 
         console.log("");
 

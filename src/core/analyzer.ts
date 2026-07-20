@@ -9,6 +9,7 @@ import { detectDeployment } from "../detector/deploymentDetector.js";
 import { detectEnvironment } from "../detector/environmentDetector.js";
 import { detectGit } from "../detector/gitDetector.js";
 import { detectLicense } from "../detector/licenseDetector.js";
+import { detectStructure } from "../detector/structureDetector.js";
 
 export async function analyzeProject(): Promise<ProjectAnalysis> {
 
@@ -30,6 +31,8 @@ export async function analyzeProject(): Promise<ProjectAnalysis> {
 
     const license = await detectLicense(project);
 
+    const structure = await detectStructure();
+
     technologies.packageManager = await detectPackageManager();
 
     return {
@@ -41,7 +44,8 @@ export async function analyzeProject(): Promise<ProjectAnalysis> {
         deployment,
         environment,
         git,
-        license
+        license,
+        structure
     };
 
 }
