@@ -1,6 +1,8 @@
 import { Command } from "commander";
 import chalk from "chalk";
 import { analyzeProject } from "./core/analyzer.js";
+import { generateReadme } from "./generator/readmeGenerator.js";
+import { writeReadme } from "./services/fileService.js";
 
 const program = new Command();
 
@@ -14,6 +16,13 @@ program.action(async () => {
         console.log(chalk.cyan("🔍 Scanning project...\n"));
 
         const result = await analyzeProject();
+
+        const markdown = generateReadme(result);
+
+        await writeReadme(markdown);
+
+        console.log("");
+        console.log(chalk.green("✓ README.generated.md created"));
 
         console.log(chalk.green("✅ Project Analysis Complete!\n"));
 

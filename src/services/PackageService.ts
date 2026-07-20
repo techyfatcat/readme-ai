@@ -21,6 +21,7 @@ export async function getProjectInfo(): Promise<ProjectInfo> {
         license: packageJson.license,
         scripts: packageJson.scripts ?? {},
         dependencies: packageJson.dependencies ?? {},
-        devDependencies: packageJson.devDependencies ?? {}
+        devDependencies: packageJson.devDependencies ?? {},
+        repository: packageJson.repository,
     };
 }
