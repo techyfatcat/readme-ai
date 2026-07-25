@@ -5,6 +5,7 @@ import { generateInstallation } from "./sections/installation.js";
 import { generateUsage } from "./sections/usage.js";
 import { generateTechStack } from "./sections/techStack.js";
 import { generateProjectStructure } from "./sections/projectStructure.js";
+import { generateBadgeSection } from "./sections/badges.js";
 
 export function generateReadme(
     analysis: ProjectAnalysis
@@ -13,6 +14,8 @@ export function generateReadme(
     const builder = new MarkdownBuilder();
 
     generateOverview(builder, analysis);
+
+    generateBadgeSection(builder, analysis);
 
     generateInstallation(builder, analysis);
 
