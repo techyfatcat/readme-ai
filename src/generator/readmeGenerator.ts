@@ -6,6 +6,7 @@ import { generateUsage } from "./sections/usage.js";
 import { generateTechStack } from "./sections/techStack.js";
 import { generateProjectStructure } from "./sections/projectStructure.js";
 import { generateBadgeSection } from "./sections/badges.js";
+import { generateEnvironment } from "./sections/environment.js";
 
 export function generateReadme(
     analysis: ProjectAnalysis
@@ -20,6 +21,8 @@ export function generateReadme(
     generateInstallation(builder, analysis);
 
     generateUsage(builder, analysis);
+
+    generateEnvironment(builder, analysis);
 
     generateTechStack(builder, analysis);
 
